@@ -59,7 +59,7 @@ export const isAuthenticated = () => {
 };
 
 export const signout = (next) => {
-  const userId = isAuthenticated() && isAuthenticated().user.id;
+  const userId = isAuthenticated() && isAuthenticated().user._id;
 
   if (typeof window !== undefined) {
     localStorage.removeItem("jwt");

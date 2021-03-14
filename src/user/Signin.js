@@ -33,8 +33,7 @@ const Signin = () => {
       .then((data) => {
         console.log(data);
         if (data && data.token) {
-          let sessionToken = data.token;
-          autheticate(sessionToken, () => {
+          autheticate(data, () => {
             console.log("TOKEN ADDED TO LOCAL STORAGE");
             setValues({
               ...values,
