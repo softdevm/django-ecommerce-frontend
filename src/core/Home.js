@@ -24,7 +24,6 @@ const Home = () => {
 
   return (
     <Base>
-      <h1>Hello World from Home</h1>
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-3 mb-4">
