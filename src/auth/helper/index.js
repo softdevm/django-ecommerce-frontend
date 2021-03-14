@@ -3,7 +3,7 @@ import { API } from "./../../backend";
 
 export const signup = (user) => {
   var myHeaders = new Headers();
-  myHeaders.append(Accept, "application/json");
+  myHeaders.append("Accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify(user);
@@ -15,7 +15,7 @@ export const signup = (user) => {
     redirect: "follow",
   };
 
-  return fetch(`${API}/api/user/`, requestOptions)
+  return fetch(`${API}/user/`, requestOptions)
     .then((response) => {
       return response.json();
     })
@@ -33,7 +33,7 @@ export const signin = (user) => {
     redirect: "follow",
   };
 
-  return fetch(`${API}/api/user/login/`, requestOptions)
+  return fetch(`${API}/user/login/`, requestOptions)
     .then((response) => {
       return response.json();
     })
@@ -71,7 +71,7 @@ export const signout = (next) => {
       redirect: "follow",
     };
 
-    return fetch(`${API}/api/user/logout/${userId}/`, requestOptions)
+    return fetch(`${API}/user/logout/${userId}/`, requestOptions)
       .then((response) => {
         console.log("User Signed Out Successfully.");
         next();
